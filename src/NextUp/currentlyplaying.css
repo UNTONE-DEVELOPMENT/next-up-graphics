@@ -1,0 +1,95 @@
+
+
+
+.currentlyplaying {
+    position: absolute;
+    width: 1300px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+.currentlyplaying .base {
+    height: 100%;
+}
+
+.currentlyplaying .base > img {
+    opacity: 0.25;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+    mask-image: radial-gradient(94.48% 55.72% at 5.52% 50%, #D9D9D9 0%, rgba(115, 115, 115, 0) 100%);
+
+}
+.currentlyplaying .base > div {
+    width: 900px;
+    position: relative;
+    padding: 56px;
+    padding-top: 230px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 173px);
+    z-index: 4;
+}
+
+.currentlyplaying .base > div > img {
+    height: auto;
+    margin-top: auto;
+    width: 544px;
+    border-radius: 20px;
+}
+.currentlyplaying .base > div > div {
+    height: 10px;
+    background-color: #fff5;
+    backdrop-filter: blur(20px);
+    width: 100%;
+    border-radius: 10px;
+}
+.currentlyplaying .base > div > div > div {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.currentlyplaying h3 {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1;
+    margin-top: 40px;
+}
+.currentlyplaying h1 {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.item, .next-item {
+    transition: all 1s ease
+}
+
+.item {
+    z-index: 2; /* Ensure current item is above next item during transition */
+}
+
+.next-item {
+    z-index: 1;
+    margin-left: 100px;
+    opacity: 0 !important;
+}
+
+.item.transitioning {
+    margin-left: -100px;
+    opacity: 0;
+}
+
+.next-item.transitioning {
+    opacity: 1;
+}
