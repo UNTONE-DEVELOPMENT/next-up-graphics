@@ -3,15 +3,19 @@
 
 .currentlyplaying {
     position: absolute;
-    width: 1300px;
+    width: 1700px;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     position: relative;
     color: white;
 }
 .currentlyplaying .base {
+    position: absolute;
+    width: 1600px;
+    overflow: hidden;
     height: 100%;
+    max-height: 100%;
 }
 
 .currentlyplaying .base > img {
@@ -29,20 +33,18 @@
 
 }
 .currentlyplaying .base > div {
-    width: 900px;
+    width: 1050px;
     position: relative;
     padding: 56px;
-    padding-top: 230px;
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 173px);
     z-index: 4;
+    position: absolute;
+    bottom: 0;
 }
 
 .currentlyplaying .base > div > img {
     height: auto;
     margin-top: auto;
-    width: 544px;
+    width: 500px;
     border-radius: 20px;
 }
 .currentlyplaying .base > div > div {
@@ -65,7 +67,7 @@
     margin-top: 40px;
 }
 .currentlyplaying h1 {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 15px;

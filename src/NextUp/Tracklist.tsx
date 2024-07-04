@@ -3,17 +3,14 @@ import { useCurrentFrame } from 'remotion';
 
 import data from "./data";
 
-const Item = ({ artist, title, isActive, key }) => {
+const Item = ({ artist, title, isActive, key, length }) => {
     if(artist == "end") return;
     return (
-        <div style={{
-            padding: '20px',
-            border: '1px solid black',
-            margin: '10px',
-            backgroundColor: isActive ? 'yellow' : 'white' // Highlight active item
-        }}>
-            <h3>{artist}</h3>
-            <p>{title}</p>
+        <div className={
+            "tracklist-item " + (isActive ? 'active' : 'notactive')
+        }>
+            <h3>{artist} <strong>{title}</strong></h3>
+            <h2>{length}</h2>
         </div>
     );
 };
@@ -42,6 +39,7 @@ const Timeline = () => {
                     artist={item.artist}
                     title={item.title}
                     isActive={index === activeIndex}
+                length={item.length}
                 />
             ))}
         </div>
